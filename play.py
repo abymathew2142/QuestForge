@@ -3,4 +3,14 @@ from domain.character import Character
 
 
 if __name__ == "__main__":
-    print("QuestForge booting... (Level 0 skeleton)")
+    hero = Character("Aria", 100, 15)
+    goblin = Character("Goblin", 30, 5)
+
+    print(hero.describe())
+    print(goblin.describe())
+   
+    hero.attack(goblin)
+    print(goblin.describe())
+
+    goblin.heal(10)
+    goblin.describe()
