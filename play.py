@@ -9,19 +9,5 @@ if __name__ == "__main__":
     joker = Character("Joker", 200, 10)
     batman = Character("Batman", 200, 20)
 
-    print(hero.describe())
-    print(goblin.describe())
-    print(joker.describe())
-    print(batman.describe())
-
-    hero.attack(goblin)
-    print(goblin.describe())
-
-    goblin.heal(10)
-    goblin.describe()
-
-
-    joker.attack(batman)
-    print(batman.describe())
-    batman.attack(joker)
+    joker.take_damage(50)
     print(joker.describe())
