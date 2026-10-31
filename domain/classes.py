@@ -1,27 +1,27 @@
 from domain.character import Character
 
-class Warrior(Character):
+class Snipper(Character):
     def __init__(self, name: str):
-        super().__init__(name, health=150, attack_power=20)
+        super().__init__(name, health=100, attack_power=10)
 
     def special_ability(self, target: Character):
-        bonus = int(self.attack_power * 1.5)
+        bonus = int(self.attack_power * 2)
         target.take_damage(bonus)
         print(f"{self.name} uses bonus {bonus} damage the target {target.name}")
 
 
-class Mage(Character):
+class Commando(Character):
     
     def __init__(self, name: str):
-        super().__init__(name, health=300, attack_power=25)
-        self.balance = 50
+        super().__init__(name, health=100, attack_power=10)
+        self.skillamount = 50
 
     def special_ability(self, target: Character):
         cost = 20
-        if self.balance < cost:
-            print(f"{self.name} don't have enough balance for using this weapon")
+        if self.skillamount < cost:
+            print(f"{self.name} don't have enough skillamount for using this weapon")
             return
-        self.balance -= cost
-        new_attack_power = self.attack_power * 2 
+        self.skillamount -= cost
+        new_attack_power = self.attack_power * 3 
         target.take_damage(new_attack_power)
-        print(f"{self.name} used a special weapon on target {target.name} with power {new_attack_power} ----- {target.describe()}")
+        print(f"{self.name} used a special weapon on target {target.name} with power {new_attack_power}")

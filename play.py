@@ -1,21 +1,13 @@
 
 from domain.character import Character
-from domain.classes import Mage, Warrior
+from domain.classes import Snipper, Commando
+from domain.battle import run_special_round
 
 
 if __name__ == "__main__":
-    hero = Character("Aria", 100, 15)
-    goblin = Character("Goblin", 30, 5)
+    soldiers = [Snipper("Snipper Soldier"), Commando("Commando Soldier")]
+    enemy = Character("Enemy", 100, 10)
 
-    # joker = Character("Joker", 200, 10)
-    # batman = Character("Batman", 200, 20)
-
-    # joker.take_damage(50)
-    # print(joker.describe())
-
-    david = Mage("David")
-    goliath = Warrior("Goliath")
-
-    goliath.attack(david)
-    david.special_ability(goliath)
-
+    for member in soldiers:
+        run_special_round(member, enemy)
+        print(f"{enemy.name} health after {member.name} attack is : {enemy.health}")
